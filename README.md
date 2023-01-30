@@ -37,7 +37,7 @@ To make it work in a Victim Windows Machine, Operator need to know the `ReleaseI
 
 ### Demo:
 
-![ReflectiveNtdll](https://user-images.githubusercontent.com/61424547/215466427-b19b37de-4141-4b27-80ce-e2d93bf908ac.gif)
+https://user-images.githubusercontent.com/61424547/215623106-56f4d00e-c1e4-4294-8243-86ef97659712.mp4
 
 Video Link: https://drive.google.com/file/d/11lPBx2pYpy0_wr3lzVUeDziELdT-DAlK/view?usp=share_link
 
