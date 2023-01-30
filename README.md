@@ -5,7 +5,7 @@
 2. NTDLL Unhooking from implant Process.
 3. Followed by loading of ntdll in-memory ([BYONtdll](https://steve-s.gitbook.io/0xtriboulet/unholy-unhooking/unholy-unhooking-frbyodll)), which is present as shellcode (using [pe2shc](https://github.com/hasherezade/pe_to_shellcode) by [@hasherezade](https://twitter.com/hasherezade)).
 4. Evasion via ***In-memory Payload encryption*** via [SystemFucntion033](https://www.redteam.cafe/red-team/shellcode-injection/inmemory-shellcode-encryption-and-decryption-using-systemfunction033) NtApi. It performs RC4 encryption and decryption in-memory, which ***erradicates*** "_On Injection_"  shellcode detection, as in case of normal shellcode injection, encrypted payload is decrypted just before mapping those raw shellcode in process memeory, at that particular moment, the AV trigger happens. But in this case, no chance of that as decryption occurs when it is already mapped in process memory :wink:
-5. Shellcode Execution via No new thread technique via [Fiber](https://www.ired.team/offensive-security/code-injection-process-injection/executing-shellcode-with-createfiber) bypassing [Get-InjectedThread.ps1](https://gist.github.com/jaredcatkinson/23905d34537ce4b5b1818c3e6405c1d2) by [@jaredcatkinson](https://twitter.com/jaredcatkinson?lang=en).
+5. Shellcode Execution via No new thread technique via [Fiber](https://www.ired.team/offensive-security/code-injection-process-injection/executing-shellcode-with-createfiber).
 
 ### DrawBack of this POC:
 To make it work in all release versions of 
