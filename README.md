@@ -10,7 +10,7 @@
 5. Shellcode Execution via No new thread technique via [Fiber](https://www.ired.team/offensive-security/code-injection-process-injection/executing-shellcode-with-createfiber).
 
 ### DrawBack of this POC:
-To make it work in all release versions of 
+To make it work in a Victim Windows Machine, Operator need to know the `ReleaseID` of the Victim Windows Machine prior to the Execution of this Implant, as based on the `ReleaseID`, ntdll.dll varies. After getting the ntdll version, follow the below mentioned steps.
 
 ### Building the Executable:
 ```
