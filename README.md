@@ -1,4 +1,6 @@
-### :exclamation: A Small personal WeekEnd Project POC form my side. Completely Free and Open Source. Doesn't belong to my Company's Asset!
+## :exclamation: A Small personal WeekEnd Project POC form my side. Completely Free and Open Source. Doesn't belong to my Company's Asset!
+
+### This POC will be useful if the Operator came to know about the _`RealeaseID`_ of the Victim Windows Machine before the execution of this implant into the Victim Machine. As for different release ID, the ntdll.dll are different. In case of wrong match, this implant will ***NOT*** work/ crash!
 
 # ReflectiveNtdll
 1. A POC Dropper focusing EDR evasion (***Self-Injecting dropper***). Again thanks to [Sektor7](https://institute.sektor7.net/) by [Reenzo](https://twitter.com/SEKTOR7net)
@@ -8,7 +10,7 @@
 5. Shellcode Execution via No new thread technique via [Fiber](https://www.ired.team/offensive-security/code-injection-process-injection/executing-shellcode-with-createfiber).
 
 ### DrawBack of this POC:
-To make it work in all release versions of 
+To make it work in a Victim Windows Machine, Operator need to know the `ReleaseID` of the Victim Windows Machine prior to the Execution of this Implant, as based on the `ReleaseID`, ntdll.dll varies. After getting the ntdll version, follow the below mentioned steps.
 
 ### Building the Executable:
 ```
