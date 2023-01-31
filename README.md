@@ -3,7 +3,7 @@
 ### This POC will be useful if the Operator came to know about the _`RealeaseID`_ of the Victim Windows Machine before the execution of this implant into the Victim Machine. As for different release ID, the ntdll.dll are different. In case of wrong match, this implant will ***NOT*** work/ crash!
 
 # ReflectiveNtdll
-1. A POC Dropper focusing EDR evasion (***Self-Injecting dropper***). Again thanks to [Sektor7](https://institute.sektor7.net/) by [Reenzo](https://twitter.com/SEKTOR7net)
+1. A POC Dropper focusing EDR evasion (***Self-Injecting dropper***). Again thanks to [Sektor7](https://institute.sektor7.net/) by [reenz0h](https://twitter.com/SEKTOR7net)
 2. NTDLL Unhooking from implant Process.
 3. Followed by loading of ntdll in-memory ([BYONtdll](https://steve-s.gitbook.io/0xtriboulet/unholy-unhooking/unholy-unhooking-frbyodll)), which is present as shellcode (using [pe2shc](https://github.com/hasherezade/pe_to_shellcode) by [@hasherezade](https://twitter.com/hasherezade)).
 4. Evasion via ***In-memory Payload encryption*** via [SystemFucntion033](https://www.redteam.cafe/red-team/shellcode-injection/inmemory-shellcode-encryption-and-decryption-using-systemfunction033) NtApi. It performs RC4 encryption and decryption in-memory, which ***erradicates*** "_On Injection_"  shellcode detection, as in case of normal shellcode injection, encrypted payload is decrypted just before mapping those raw shellcode in process memeory, at that particular moment, the AV trigger happens. But in this case, no chance of that as decryption occurs when it is already mapped in process memory :wink:
