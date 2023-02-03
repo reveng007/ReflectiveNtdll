@@ -1,6 +1,8 @@
 ## :exclamation: A Small personal WeekEnd Project POC form my side. Completely Free and Open Source. Doesn't belong to my Company's Asset!
 
-### This POC will be useful if the Operator came to know about the _`RealeaseID`_ of the Victim Windows Machine before the execution of this implant into the Victim Machine. As for different release ID, the ntdll.dll are different. In case of wrong match, this implant will ***NOT*** work/ crash!
+#### This POC will be useful if the Operator came to know about the _`RealeaseID`_ of the Victim Windows Machine before the execution of this implant into the Victim Machine. As for different release ID, the ntdll.dll are different. In case of wrong match, this implant will ***NOT*** work/ crash!
+
+### Another Project Related to this Concept done by [@D1rkMtr](https://twitter.com/D1rkMtr) : [NTDLLReflection](https://github.com/TheD1rkMtr/NTDLLReflection)
 
 # ReflectiveNtdll
 1. A POC Dropper focusing EDR evasion (***Self-Injecting dropper***). Again thanks to [Sektor7](https://institute.sektor7.net/) by [reenz0h](https://twitter.com/SEKTOR7net)
