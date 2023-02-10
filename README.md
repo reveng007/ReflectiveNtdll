@@ -14,7 +14,7 @@
 ### DrawBack of this POC:
 To make it work in a Victim Windows Machine, Operator need to know the `ReleaseID` of the Victim Windows Machine prior to the Execution of this Implant, as based on the `ReleaseID`, ntdll.dll varies. After getting the ntdll version, follow the below mentioned steps.
 
-### Building the Executable:
+### Building the Executable (For POC1 as well as POC2):
 ```
 1. Get the shellcode from Havoc C2 (Or any C2) [Tested Against Havoc C2 only!]
 
@@ -32,12 +32,12 @@ To make it work in a Victim Windows Machine, Operator need to know the `ReleaseI
 (I tested in these versions only: win10_ntdll_22H2_19045_2486 and win11-ntdll_22H2_22621-1105)
 8. Again, (in linux/ gitbash prompt) to get header file containing ntdll shellcode : xxd -i win10_ntdll_22H2_19045_2486.bin > win10_ntdll_22H2_19045_2486.h
 
-9. Move those two header file to "ReflectiveNtdll" folder
+9. Move those two header file to "ReflectiveNtdll\POCn" folder (where n = 1 or 2)
 
 10. Run: .\compile.bat
 ```
 
-### Demo:
+### Demo For POC1:
 
 https://user-images.githubusercontent.com/61424547/215623106-56f4d00e-c1e4-4294-8243-86ef97659712.mp4
 
@@ -166,6 +166,10 @@ Other:              0
 ![image](https://user-images.githubusercontent.com/61424547/215467783-9adff000-8285-4692-b14e-8100e62ddf9e.png)
 
 Suspicious usage of WinApi is removed from IAT
+
+### Demo For POC2:
+
+
 
 ### Also thanks to:
 1. [@Jean_Maes_1994](https://twitter.com/Jean_Maes_1994) for enlightening me, regarding the internals of EDR and other suggestions.
