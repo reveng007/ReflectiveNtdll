@@ -10,15 +10,17 @@
 # ReflectiveNtdll
 ### POC1:
 1. A POC Dropper focusing EDR evasion (***Self-Injecting dropper***). Again thanks to [Sektor7](https://institute.sektor7.net/) by [reenz0h](https://twitter.com/SEKTOR7net)
-2. NTDLL Unhooking from implant Process.
-3. Followed by loading of ntdll in-memory ([BYONtdll](https://steve-s.gitbook.io/0xtriboulet/unholy-unhooking/unholy-unhooking-frbyodll)), which is present as shellcode (using [pe2shc](https://github.com/hasherezade/pe_to_shellcode) by [@hasherezade](https://twitter.com/hasherezade)).
+2. Followed by loading of ntdll in-memory ([BYONtdll](https://steve-s.gitbook.io/0xtriboulet/unholy-unhooking/unholy-unhooking-frbyodll)), which is present as shellcode (using [pe2shc](https://github.com/hasherezade/pe_to_shellcode) by [@hasherezade](https://twitter.com/hasherezade)).
+3. NTDLL Unhooking from implant Process.
 4. Evasion via ***In-memory Payload encryption*** via [SystemFucntion033](https://www.redteam.cafe/red-team/shellcode-injection/inmemory-shellcode-encryption-and-decryption-using-systemfunction033) NtApi. It performs RC4 encryption and decryption in-memory, which ***erradicates*** "_On Injection_"  shellcode detection, as in case of normal shellcode injection, encrypted payload is decrypted just before mapping those raw shellcode in process memeory, at that particular moment, the AV trigger happens. But in this case, no chance of that as decryption occurs when it is already mapped in process memory :wink:
 5. Shellcode Execution via No new thread technique via [Fiber](https://www.ired.team/offensive-security/code-injection-process-injection/executing-shellcode-with-createfiber).
 
 ### POC2:
 1. A POC Dropper focusing EDR evasion (***Self-Injecting dropper***). Again thanks to [Sektor7](https://institute.sektor7.net/) by [reenz0h](https://twitter.com/SEKTOR7net)
-2. [_`Different from Previous One`_] Loading of ntdll in-memory ([BYONtdll](https://steve-s.gitbook.io/0xtriboulet/unholy-unhooking/unholy-unhooking-frbyodll)), which is present as shellcode (using [pe2shc](https://github.com/hasherezade/pe_to_shellcode) by [@hasherezade](https://twitter.com/hasherezade)).
-3. Mapping the new Ntdll in memory and then getting the ***address of our target NtApi*** from the EAT of the mapped Ntdll in process memory (Yup! Appended the technique of [NTDLLReflection](https://github.com/TheD1rkMtr/NTDLLReflection) by [@D1rkMtr]( NTDLLReflection)).
+2. Loading of ntdll in-memory ([BYONtdll](https://steve-s.gitbook.io/0xtriboulet/unholy-unhooking/unholy-unhooking-frbyodll)), which is present as shellcode (using [pe2shc](https://github.com/hasherezade/pe_to_shellcode) by [@hasherezade](https://twitter.com/hasherezade)).
+3. [_`Different from Previous One`_]\
+No need of Ntdll Unhooking.\
+Mapping the new Ntdll in memory and then getting the ***address of our target NtApi*** from the EAT of the mapped Ntdll in process memory (Yup! Appended the technique of [NTDLLReflection](https://github.com/TheD1rkMtr/NTDLLReflection) by [@D1rkMtr]( NTDLLReflection)).
 4. Evasion via ***In-memory Payload encryption*** via [SystemFucntion033](https://www.redteam.cafe/red-team/shellcode-injection/inmemory-shellcode-encryption-and-decryption-using-systemfunction033) NtApi. It performs RC4 encryption and decryption in-memory, which ***erradicates*** "_On Injection_"  shellcode detection, as in case of normal shellcode injection, encrypted payload is decrypted just before mapping those raw shellcode in process memeory, at that particular moment, the AV trigger happens. But in this case, no chance of that as decryption occurs when it is already mapped in process memory :wink:
 5. Shellcode Execution via No new thread technique via [Fiber](https://www.ired.team/offensive-security/code-injection-process-injection/executing-shellcode-with-createfiber).
 
@@ -197,7 +199,7 @@ I used CreateFiber not CreateRemoteThread, to run shellcode in-memory!
 
 3. AntiScan.me Scan:
 
-![image](https://user-images.githubusercontent.com/61424547/217977383-6e559006-8af1-4e3b-a7d2-5e5c3130fbac.png)
+![image](https://user-images.githubusercontent.com/61424547/218008503-0f4a1557-eaef-4cc7-8872-c3e58b9ab451.png)
 
 4. [Capa](https://github.com/mandiant/capa) Scan:
 
