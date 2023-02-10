@@ -207,7 +207,7 @@ I used CreateFiber not CreateRemoteThread, to run shellcode in-memory!
 
 ![image](https://user-images.githubusercontent.com/61424547/217977888-e8971a35-1719-4618-a23f-940ca0e2b235.png)
 
-As we have loaded ntdll.dll in-memory and also the implant is not signed!
+As we have loaded ntdll.dll in-memory, but this time it was not detected by Moneta and also the implant is not signed!
 
 6. [Pe-sieve](https://github.com/hasherezade/pe-sieve) Scan:
 
